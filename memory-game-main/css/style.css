@@ -1,0 +1,284 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: "Atkinson Hyperlegible";
+  user-select: none;
+}
+
+.hidden {
+  display: none;
+}
+
+/* ===== STARTER PAGE ===== */
+.starter-page {
+  position: fixed;
+  inset: 0;
+  background-color: hsl(206, 45%, 15%);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  transition:
+    transform 0.6s ease,
+    opacity 0.6s ease;
+  z-index: 10;
+}
+.starter-page.slide-up {
+  transform: translateY(-100%);
+  opacity: 0;
+}
+
+.starter-wrapper {
+  text-align: center;
+  color: white;
+}
+
+h1 {
+  font-size: 48px;
+  margin-bottom: 48px;
+}
+
+.gameSelection {
+  background-color: white;
+  padding: 32px;
+  border-radius: 25px;
+  color: black;
+}
+
+.gameSelection div {
+  margin-bottom: 32px;
+}
+
+h3 {
+  color: #7191a5;
+  font-size: 20px;
+  margin-bottom: 16px;
+}
+
+.buttons {
+  display: flex;
+  gap: 12px;
+  justify-content: center;
+}
+
+.btns {
+  background-color: #bcced9;
+  color: white;
+  border: none;
+  cursor: pointer;
+  font-size: 20px;
+  font-weight: 700;
+  border-radius: 26px;
+  padding: 14px 32px;
+}
+
+.activeBtn {
+  background-color: #304859;
+}
+
+.start-game {
+  background-color: #fda214;
+  color: white;
+  width: 100%;
+  padding: 18px;
+  font-size: 28px;
+  border-radius: 35px;
+  font-weight: 700;
+  cursor: pointer;
+  border: none;
+}
+
+/* ===== GAME PAGE ===== */
+.game-page {
+  padding: 24px;
+}
+
+.game-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.game-board {
+  margin: 40px auto;
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 16px;
+  max-width: 420px;
+}
+
+.card {
+  position: relative;
+  width: 100%;
+  aspect-ratio: 1 / 1;
+  cursor: pointer;
+}
+
+.card img {
+  width: 100%;
+  height: 100%;
+}
+
+.card span {
+  position: absolute;
+  inset: 0;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-size: 28px;
+  font-weight: 700;
+  color: white;
+}
+
+.game-info {
+  display: flex;
+  justify-content: space-around;
+  margin-top: 24px;
+}
+
+.restart {
+  background-color: #fda214;
+  color: white;
+  border: none;
+  padding: 12px 24px;
+  font-size: 18px;
+  border-radius: 30px;
+  cursor: pointer;
+}
+
+.new-game {
+  background-color: #5b6369;
+  color: white;
+  border: none;
+  padding: 12px 24px;
+  font-size: 18px;
+  border-radius: 30px;
+  cursor: pointer;
+}
+
+/* ===== RESPOSIVE ===== */
+
+@media (max-width: 768px) {
+  h1 {
+    font-size: 40px;
+    margin-bottom: 32px;
+  }
+
+  .gameSelection {
+    padding: 24px;
+  }
+
+  .btns {
+    font-size: 18px;
+    padding: 12px 24px;
+  }
+
+  .start-game {
+    font-size: 24px;
+    padding: 16px;
+  }
+
+  .game-board {
+    max-width: 360px;
+    gap: 12px;
+  }
+
+  .card span {
+    font-size: 24px;
+  }
+
+  .restart,
+  .new-game {
+    font-size: 16px;
+    padding: 10px 20px;
+  }
+}
+
+@media (max-width: 480px) {
+  body {
+    padding: 8px;
+  }
+
+  h1 {
+    font-size: 32px;
+    margin-bottom: 24px;
+  }
+
+  h3 {
+    font-size: 16px;
+  }
+
+  .starter-wrapper {
+    width: 100%;
+  }
+
+  .gameSelection {
+    padding: 20px;
+    border-radius: 20px;
+  }
+
+  .buttons {
+    flex-direction: column;
+    gap: 10px;
+  }
+
+  .btns {
+    width: 100%;
+    font-size: 16px;
+    padding: 12px;
+  }
+
+  .start-game {
+    font-size: 20px;
+    padding: 14px;
+  }
+
+  .game-header {
+    flex-direction: column;
+    gap: 12px;
+  }
+
+  .controls {
+    display: flex;
+    gap: 10px;
+  }
+
+  .game-board {
+    grid-template-columns: repeat(4, 1fr);
+    max-width: 100%;
+    gap: 10px;
+    margin: 24px auto;
+  }
+
+  .card span {
+    font-size: 20px;
+  }
+
+  .game-info {
+    flex-direction: column;
+    gap: 8px;
+    align-items: center;
+    font-size: 16px;
+  }
+
+  .restart,
+  .new-game {
+    width: 100%;
+    text-align: center;
+    font-size: 16px;
+    padding: 12px;
+  }
+}
+
+@media (max-width: 360px) {
+  h1 {
+    font-size: 28px;
+  }
+
+  .card span {
+    font-size: 18px;
+  }
+}
